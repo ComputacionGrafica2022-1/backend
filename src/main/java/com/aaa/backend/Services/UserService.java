@@ -22,12 +22,12 @@ public class UserService {
         return userRepository.save(user);
     }
     
-    public Optional<User> getUserbyId(Long id){
-        return userRepository.findById(id);
+    public User getUserbyId(Long id){
+        return userRepository.findById(id).orElse(null);
     }
 
-    public Optional<User> getUserbyEmail(String email){
-        return userRepository.findByEmail(email);
+    public User getUserbyEmail(String email){
+        return userRepository.findByEmail(email).orElse(null);
     }
 
     public boolean deleteUser(Long id){

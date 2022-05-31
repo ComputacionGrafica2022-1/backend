@@ -40,12 +40,12 @@ public class UserController {
     }
 
     @GetMapping("/user/{id}")
-    public Optional<User> getUserbyId(@PathVariable("id") Long id){
+    public User getUserbyId(@PathVariable("id") Long id){
         return userService.getUserbyId(id);
     }
    
     @GetMapping("/user/query")
-    public Optional<User> getUserbyEmail(@RequestParam("email") String email){
+    public User getUserbyEmail(@RequestParam("email") String email){
         return userService.getUserbyEmail(email);
     }
 
