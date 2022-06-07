@@ -1,7 +1,6 @@
 package com.aaa.backend.Controllers;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 import com.aaa.backend.Models.User;
 import com.aaa.backend.Services.UserService;

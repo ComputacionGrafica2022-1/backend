@@ -19,6 +19,8 @@ public class Supplier {
     private String name;
     private String direccion;
     private String telefono;
+    @Column(columnDefinition = "boolean default false")
+    private Boolean done;
 
     public Long getId() {
         return this.id;
@@ -50,6 +52,14 @@ public class Supplier {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Boolean getDone() {
+        return this.done;
+    }
+
+    public void setDone(Boolean done) {
+        this.done = done;
     }
 
 }

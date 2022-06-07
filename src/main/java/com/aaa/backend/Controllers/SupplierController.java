@@ -2,7 +2,10 @@ package com.aaa.backend.Controllers;
 
 import java.util.ArrayList;
 
+import javax.mail.MessagingException;
+
 import com.aaa.backend.Models.Supplier;
+import com.aaa.backend.Services.EmailSenderService;
 import com.aaa.backend.Services.SupplierService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,8 @@ public class SupplierController {
     
     @Autowired
     SupplierService supplierService;
+    @Autowired
+	private EmailSenderService emailSenderService;
 
     @GetMapping("/suppliers")
     public ArrayList<Supplier> getAllSuppliers(){
@@ -26,8 +31,10 @@ public class SupplierController {
     }
     
     @PostMapping("/supplier")
-    public Supplier saveSupplier(@RequestBody Supplier supplier){
-        return supplierService.saveSupplier(supplier);
+    public Supplier saveSupplier(@RequestBody Supplier supplier) throws MessagingException, InterruptedException{
+        Supplier supplierRegistered = supplierService.saveSupplier(supplier);
+        emailSenderService.waitToSend(supplierRegistered);
+        return supplierRegistered;
     }
 
     @PutMapping("/supplier/{id}")
