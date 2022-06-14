@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+import com.aaa.backend.Models.AirQuote;
 import com.aaa.backend.Models.ScaffoldQuote;
 import com.aaa.backend.Models.Supplier;
 
@@ -70,6 +71,32 @@ public class EmailSenderService {
         "<body>" +
         "<h1>"+ "AAA" +"</h1>" +
         "<div>Hola, tu cotización del andamio ya está lista!</div>" +
+        "</body>" +
+        "</html>";
+        TimeUnit.SECONDS.sleep(10);
+        sendEmail(quote.getUserEmail(), "Cotizacion", mailBody, file.getAbsolutePath());
+    }
+
+    @Async
+    public void waitToSend(AirQuote quote) throws MessagingException, InterruptedException{
+        
+        File file = new File("C:/Users/DIEGO/Desktop/AAA/PDFs/"+quote.getId()+"/test.pdf");
+
+        System.out.print("\nRegistrando");
+        while (!file.exists() || !(file.length() > 0)){
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(3);
+        }
+        String mailBody;
+
+        mailBody = "<!DOCTYPE html><html><head>" +
+        "<style>" +
+        "h1   {color: blue;}" +
+        "</style>" +
+        "</head>" +
+        "<body>" +
+        "<h1>"+ "AAA" +"</h1>" +
+        "<div>Hola, tu cotización del aire acondicionado ya está lista!</div>" +
         "</body>" +
         "</html>";
         TimeUnit.SECONDS.sleep(10);
