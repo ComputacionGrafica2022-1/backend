@@ -24,7 +24,7 @@ public class AirQuote {
     // Grosor de lámina
     private Double thickness;
     // Número de difusores
-    private Integer nDiffusers;
+    private Integer diffusers;
     // Tipo de aire acondicionado
     //  1. De pared
     //  2. Unidad externa
@@ -71,12 +71,12 @@ public class AirQuote {
         this.thickness = thickness;
     }
 
-    public Integer getNDiffusers() {
-        return this.nDiffusers;
+    public Integer getDiffusers() {
+        return this.diffusers;
     }
 
-    public void setNDiffusers(Integer nDiffusers) {
-        this.nDiffusers = nDiffusers;
+    public void setDiffusers(Integer diffusers) {
+        this.diffusers = diffusers;
     }
 
     public Integer getType() {
@@ -94,7 +94,5 @@ public class AirQuote {
     public void setDone(Boolean done) {
         this.done = done;
     }
-
-
-    
+   
 }
