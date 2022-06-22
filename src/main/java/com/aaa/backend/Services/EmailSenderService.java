@@ -26,7 +26,7 @@ public class EmailSenderService {
     @Async
     public void waitToSend(Supplier supplier) throws MessagingException, InterruptedException{
         
-        File file = new File("C:/Users/DIEGO/Desktop/AAA/PDFs/"+supplier.getId()+"/test.pdf");
+        File file = new File("C:\\Users\\SalaCAD\\Documents\\AAA\\PDFs\\"+supplier.getId()+"/test.pdf");
 
         System.out.print("\nRegistrando");
         while (!file.exists() || !(file.length() > 0)){
@@ -54,7 +54,7 @@ public class EmailSenderService {
     @Async
     public void waitToSend(ScaffoldQuote quote) throws MessagingException, InterruptedException{
         
-        File file = new File("C:/Users/DIEGO/Desktop/AAA/PDFs/"+quote.getId()+"/test.pdf");
+        File file = new File("C:\\Users\\SalaCAD\\Documents\\AAA\\PDFs\\"+quote.getId()+"/test.pdf");
 
         System.out.print("\nRegistrando");
         while (!file.exists() || !(file.length() > 0)){
@@ -80,7 +80,7 @@ public class EmailSenderService {
     @Async
     public void waitToSend(AirQuote quote) throws MessagingException, InterruptedException{
         
-        File file = new File("C:/Users/DIEGO/Desktop/AAA/PDFs/"+quote.getId()+"/test.pdf");
+        File file = new File("C:\\Users\\SalaCAD\\Documents\\AAA\\PDFs\\"+quote.getId()+"/test.pdf");
 
         System.out.print("\nRegistrando");
         while (!file.exists() || !(file.length() > 0)){

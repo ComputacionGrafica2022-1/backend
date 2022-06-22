@@ -46,7 +46,8 @@ public class AirQuoteController {
         if (file.isPresent()){
             try{
                 String fileName = file.get().getOriginalFilename();
-                File newFile = new File("C:\\Users\\DIEGO\\Desktop\\AAA\\DWGs\\" + quoteRegistered.getId().toString() + "\\" + fileName);
+                // File newFile = new File("C:\\Users\\DIEGO\\Desktop\\AAA\\DWGs\\" + quoteRegistered.getId().toString() + "\\" + fileName);
+                File newFile = new File("C:\\Users\\SalaCAD\\Documents\\AAA\\DWGs\\" + quoteRegistered.getId().toString() + "\\" + fileName);
                 if(!newFile.exists()){
                     newFile.mkdirs();
                 }
@@ -64,7 +65,8 @@ public class AirQuoteController {
     public ResponseEntity<?> handleUploadFile(@PathVariable("id") Long id, @RequestBody MultipartFile file){
         try{
             String fileName = file.getOriginalFilename();
-            File newFile = new File("C:\\Users\\DIEGO\\Desktop\\AAA\\DWGs\\" + id + "\\" + fileName);
+            // File newFile = new File("C:\\Users\\DIEGO\\Desktop\\AAA\\DWGs\\" + id + "\\" + fileName);
+            File newFile = new File("C:\\Users\\SalaCAD\\Documents\\AAA\\DWGs\\" + id + "\\" + fileName);
             if(!newFile.exists()){
                 newFile.mkdirs();
             }
