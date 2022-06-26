@@ -17,11 +17,8 @@ public class ScaffoldQuote {
     private Long id;
 
     private String userEmail;
-    private Double width;
-    private Double depth;
-    private Integer levels;
-    private Double levelHeight;
-    private Boolean wheels;
+    private Double base;
+    private Double height;
     private Integer type;
     private Boolean done;
 
@@ -41,44 +38,20 @@ public class ScaffoldQuote {
         this.userEmail = userEmail;
     }
 
-    public Double getWidth() {
-        return this.width;
+    public Double getBase() {
+        return this.base;
     }
 
-    public void setWidth(Double width) {
-        this.width = width;
+    public void setBase(Double base) {
+        this.base = base;
     }
 
-    public Double getDepth() {
-        return this.depth;
+    public Double getHeight() {
+        return this.height;
     }
 
-    public void setDepth(Double depth) {
-        this.depth = depth;
-    }
-
-    public Integer getLevels() {
-        return this.levels;
-    }
-
-    public void setLevels(Integer levels) {
-        this.levels = levels;
-    }
-
-    public Double getLevelHeight() {
-        return this.levelHeight;
-    }
-
-    public void setLevelHeight(Double levelHeight) {
-        this.levelHeight = levelHeight;
-    }
-
-    public Boolean getWheels() {
-        return this.wheels;
-    }
-
-    public void setWheels(Boolean wheels) {
-        this.wheels = wheels;
+    public void setHeight(Double height) {
+        this.height = height;
     }
 
     public Integer getType() {
@@ -90,10 +63,11 @@ public class ScaffoldQuote {
     }
 
     public Boolean getDone() {
-		return this.done;
-	}
+        return this.done;
+    }
 
-	public void setDone(Boolean done) {
-		this.done = done;
-	}
+    public void setDone(Boolean done) {
+        this.done = done;
+    }
+   
 }

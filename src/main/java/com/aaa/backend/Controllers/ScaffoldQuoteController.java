@@ -33,7 +33,7 @@ public class ScaffoldQuoteController {
     @PostMapping("/scaffoldQuote")
     public ScaffoldQuote saveScaffoldQuote(@RequestBody ScaffoldQuote scaffoldQuote) throws MessagingException, InterruptedException{
         ScaffoldQuote quoteRegistered = scaffoldQuoteService.saveQuote(scaffoldQuote);
-        emailSenderService.waitToSend(quoteRegistered);
+        // emailSenderService.waitToSend(quoteRegistered);
         return quoteRegistered;
     }
 
