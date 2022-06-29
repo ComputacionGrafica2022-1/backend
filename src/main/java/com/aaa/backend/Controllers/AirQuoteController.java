@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.aaa.backend.Models.AirQuote;
-import com.aaa.backend.Services.EmailSenderService;
+// import com.aaa.backend.Services.EmailSenderService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -31,15 +31,15 @@ public class AirQuoteController {
     
     @Autowired
     AirQuoteService AirQuoteService;
-    @Autowired
-	private EmailSenderService emailSenderService;
+    // @Autowired
+	// private EmailSenderService emailSenderService;
 
     @GetMapping("/airQuotes")
     public ArrayList<AirQuote> getAllAirQuotes(){
         return AirQuoteService.getAllQuotes();
     }
     
-    @PostMapping("/airQuote")
+    @PostMapping("/airQuoteFile")
     public AirQuote saveAirQuote(@RequestParam("quote") String airQuoteString, @RequestParam("file") Optional<MultipartFile> file) throws MessagingException, InterruptedException, JsonMappingException, JsonProcessingException{
         AirQuote airQuote = new ObjectMapper().readValue(airQuoteString, AirQuote.class);  
         AirQuote quoteRegistered = AirQuoteService.saveQuote(airQuote);
@@ -57,7 +57,14 @@ public class AirQuoteController {
                 return null;
             }
         }
-        // // emailSenderService.waitToSend(quoteRegistered);
+        // emailSenderService.waitToSend(quoteRegistered);
+        return quoteRegistered;
+    }
+
+    @PostMapping("/airQuote")
+    public AirQuote saveAirQuote(@RequestBody AirQuote airQuote){
+        AirQuote quoteRegistered = AirQuoteService.saveQuote(airQuote);
+        // emailSenderService.waitToSend(quoteRegistered);
         return quoteRegistered;
     }
 

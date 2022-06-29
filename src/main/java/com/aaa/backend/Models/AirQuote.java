@@ -17,27 +17,21 @@ public class AirQuote {
     private Long id;
 
     private String userEmail;
-    // Masa de aire
-    private Double mass;
-    // Longitud de ductos
-    private Double length;
-    // Grosor de lámina
-    private Double thickness;
-    // Número de difusores
-    private Integer diffusers;
-    // Tipo de aire acondicionado
-    //  1. De pared
-    //  2. Unidad externa
-    private Integer type;
+    private String userName;
+    // Tipo de unidad
+    private Integer unitType;
+    // 1. De pared
+    // 2. Externa
+    
+    // Tipo de sistema
+    private Integer systemType;
+    // 1. Solo enfriadora
+    // 2. Calentadora
+    
+    private Integer capacity;
+    private Integer voltage;
+    private Integer quantity;
     private Boolean done;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUserEmail() {
         return this.userEmail;
@@ -47,44 +41,52 @@ public class AirQuote {
         this.userEmail = userEmail;
     }
 
-    public Double getMass() {
-        return this.mass;
+    public String getUserName() {
+        return this.userName;
     }
 
-    public void setMass(Double mass) {
-        this.mass = mass;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public Double getLength() {
-        return this.length;
+    public Integer getUnitType() {
+        return this.unitType;
     }
 
-    public void setLength(Double length) {
-        this.length = length;
+    public void setUnitType(Integer unitType) {
+        this.unitType = unitType;
     }
 
-    public Double getThickness() {
-        return this.thickness;
+    public Integer getSystemType() {
+        return this.systemType;
     }
 
-    public void setThickness(Double thickness) {
-        this.thickness = thickness;
+    public void setSystemType(Integer systemType) {
+        this.systemType = systemType;
     }
 
-    public Integer getDiffusers() {
-        return this.diffusers;
+    public Integer getCapacity() {
+        return this.capacity;
     }
 
-    public void setDiffusers(Integer diffusers) {
-        this.diffusers = diffusers;
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
     }
 
-    public Integer getType() {
-        return this.type;
+    public Integer getVoltage() {
+        return this.voltage;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setVoltage(Integer voltage) {
+        this.voltage = voltage;
+    }
+
+    public Integer getQuantity() {
+        return this.quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public Boolean getDone() {
@@ -94,5 +96,15 @@ public class AirQuote {
     public void setDone(Boolean done) {
         this.done = done;
     }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
    
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aaa.backend.Models.ScaffoldQuote;
-import com.aaa.backend.Services.EmailSenderService;
+// import com.aaa.backend.Services.EmailSenderService;
 import com.aaa.backend.Services.ScaffoldQuoteService;
 
 @RestController
@@ -22,8 +22,8 @@ public class ScaffoldQuoteController {
     
     @Autowired
     ScaffoldQuoteService scaffoldQuoteService;
-    @Autowired
-	private EmailSenderService emailSenderService;
+    // @Autowired
+	// private EmailSenderService emailSenderService;
 
     @GetMapping("/scaffoldQuotes")
     public ArrayList<ScaffoldQuote> getAllScaffoldQuotes(){
