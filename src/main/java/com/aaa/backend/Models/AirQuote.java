@@ -28,7 +28,7 @@ public class AirQuote {
     // 1. Solo enfriadora
     // 2. Calentadora
     
-    private Integer capacity;
+    private String capacity;
     private Integer voltage;
     private Integer quantity;
     private Boolean done;
@@ -65,11 +65,11 @@ public class AirQuote {
         this.systemType = systemType;
     }
 
-    public Integer getCapacity() {
+    public String getCapacity() {
         return this.capacity;
     }
 
-    public void setCapacity(Integer capacity) {
+    public void setCapacity(String capacity) {
         this.capacity = capacity;
     }
 
